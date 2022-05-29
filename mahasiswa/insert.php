@@ -1,7 +1,9 @@
 <?php
 include __DIR__ . '/../autoload.php';
 
-$mahasiswa = new Mahasiswa($db);
+use App\Models\Mahasiswa;
+
+$mahasiswa = new Mahasiswa();
 
 if (isset($_POST['submit'])) {
   $mahasiswa->create([

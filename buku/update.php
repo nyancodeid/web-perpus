@@ -1,7 +1,9 @@
 <?php
 include __DIR__ . '/../autoload.php';
 
-$buku = new Buku($db);
+use App\Models\Buku;
+
+$buku = new Buku();
 $data = $buku->where('isbn', $_GET['id'])->first();
 
 if (isset($_POST['submit']) && ($data['isbn'] == $_GET['id'])) {

@@ -1,7 +1,9 @@
 <?php
 include __DIR__ . '/../autoload.php';
 
-$buku = new Buku($db);
+use App\Models\Buku;
+
+$buku = new Buku();
 
 if (isset($_POST['submit'])) {
   $buku->create([

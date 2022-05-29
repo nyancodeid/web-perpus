@@ -1,7 +1,9 @@
 <?php
 include __DIR__ . '/../autoload.php';
 
-$mahasiswa = new Mahasiswa($db);
+use App\Models\Mahasiswa;
+
+$mahasiswa = new Mahasiswa();
 $data = $mahasiswa->where('nim', $_GET['id'])->first();
 
 if (isset($_POST['submit']) && ($data['nim'] == $_GET['id'])) {

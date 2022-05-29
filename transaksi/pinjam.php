@@ -1,11 +1,15 @@
 <?php
 include __DIR__ . '/../autoload.php';
 
-$mahasiswa = new Mahasiswa($db);
-$buku = new Buku($db);
+use App\Models\Mahasiswa;
+use App\Models\Buku;
+use App\Models\Transaksi;
+
+$mahasiswa = new Mahasiswa();
+$buku = new Buku();
 
 if (isset($_POST['submit'])) {
-  $transaksi = new Transaksi($db);
+  $transaksi = new Transaksi();
 
   $transaksi->create([
     "mahasiswa_id" => $_POST['mahasiswa_id'],

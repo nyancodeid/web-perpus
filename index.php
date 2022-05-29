@@ -1,9 +1,13 @@
 <?php
 include __DIR__ . '/autoload.php';
 
-$mahasiswa = new Mahasiswa($db);
-$buku = new Buku($db);
-$transaksi = new Transaksi($db);
+use App\Models\Mahasiswa;
+use App\Models\Buku;
+use App\Models\Transaksi;
+
+$mahasiswa = new Mahasiswa();
+$buku = new Buku();
+$transaksi = new Transaksi();
 
 if (_match('action', 'delete')) {
   // Menghapus Data

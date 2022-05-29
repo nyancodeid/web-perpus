@@ -1,9 +1,13 @@
 <?php
 include __DIR__ . '/../autoload.php';
 
-$buku = new Buku($db);
-$mahasiswa = new Mahasiswa($db);
-$transaksi = new Transaksi($db);
+use App\Models\Mahasiswa;
+use App\Models\Buku;
+use App\Models\Transaksi;
+
+$buku = new Buku();
+$mahasiswa = new Mahasiswa();
+$transaksi = new Transaksi();
 
 $tx = $transaksi->where('id', $_GET['id'])->first();
 
